@@ -18,12 +18,15 @@ function App() {
     }
     pass.length === 0 ? setPassword("Password Generator") : setPassword(pass);
   }, [length, char, num, setPassword]);
+
   const copyPassword = useCallback(() => {
     window.navigator.clipboard.writeText(password);
   }, [password]);
+
   useEffect(() => {
     passwordGenerator();
   }, [length, num, char, passwordGenerator]);
+  
   return (
     <>
       <div className="w-dvw h-dvh flex bg-black  justify-center">
@@ -58,11 +61,13 @@ function App() {
               />
               <input
                 type="number"
+                max={50}
+                min={0}
                 value={length}
                 onChange={(e) => {
                   setLength(e.target.value);
                 }}
-                className="w-13"
+                className="w-13 focus:outline-none"
               />
             </div>
             <div className="flex gap-2">

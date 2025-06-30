@@ -1,12 +1,12 @@
 function ColorBox({ colorState }) {
   const color = [
-    "red-500",
-    "green-500",
-    "blue-500",
-    "black",
-    "orange-500",
-    "yellow-500",
-    "gray-500",
+    "bg-red-500",
+    "bg-green-500",
+    "bg-blue-500",
+    "bg-black", 
+    "bg-orange-500",
+    "bg-yellow-500",
+    "bg-gray-500",
   ];
   return (
     <>
@@ -14,10 +14,10 @@ function ColorBox({ colorState }) {
         {color.map((item, key) => (
           <button
             key={key}
-            className={`w-20 h-10 text-white bg-${item} px-2 rounded-md cursor-pointer  `}
+            className={`w-20 h-10 text-white ${item} px-2 rounded-md cursor-pointer`}
             onClick={() => colorState(item)}
           >
-            {item.split("-")[0]}
+            {item.replace("bg-", "").replace("-500", "")}
           </button>
         ))}
       </div>

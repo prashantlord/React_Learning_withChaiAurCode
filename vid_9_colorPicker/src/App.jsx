@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div
-        className={"w-dvw h-dvh flex items-end justify-center" + ` bg-${color}`}
+        className={"w-dvw h-dvh flex items-end justify-center" + ` ${color}`}
       >
         <ColorBox colorState={setColor} />
       </div>
