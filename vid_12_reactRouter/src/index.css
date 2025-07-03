@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@utility parent {
+  columns: 320px;
+}
